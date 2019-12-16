@@ -1,0 +1,5 @@
+name: TheWools
+version: 1.0
+author: Eric Yachbes
+main: ml.thewools.thewools.TheWools
+api-version: 1.14.4
