@@ -27,7 +27,7 @@ public class CraftingEvent implements Listener {
         ItemStack[] matrix = inv.getMatrix();
         for(int i = 0; i < 9; i++) {
             if(ingredients.containsKey(i)) {
-                if(matrix[i] == null && !matrix[i].equals(ingredients.get(i))) return;
+                if(matrix[i] == null || !matrix[i].equals(ingredients.get(i))) return;
             } else {
                 if(matrix[i] != null) return;
             }
