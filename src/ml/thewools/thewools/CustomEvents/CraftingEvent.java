@@ -33,7 +33,9 @@ public class CraftingEvent implements Listener {
             }
         }
         inv.setResult(result);
-        for(int i = 0; i < 9; i++) matrix[i].setAmount(matrix[i].getAmount() - 1);
+        for(int i = 0; i < 9; i++) {
+            if(matrix[i] != null) matrix[i].setAmount(matrix[i].getAmount() - 1);
+        };
         inv.setMatrix(matrix);
     }
 }
