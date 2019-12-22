@@ -22,16 +22,12 @@ public class CraftingEvent implements Listener {
             put(3, new ItemStack(Material.BLAZE_ROD));
             put(5, new ItemStack(Material.BLAZE_ROD));
         }});
-        for(int i = 0; i < 9; i++) {
-            if(inv[i] != null) inv[i].setAmount(inv[i].getAmount() - 1);
-        };
-        e.getInventory().setMatrix(inv);
     }
     public void checkCraft(ItemStack result, CraftingInventory inv, HashMap<Integer, ItemStack> ingredients) {
         ItemStack[] matrix = inv.getMatrix();
         for(int i = 0; i < 9; i++) {
             if(ingredients.containsKey(i)) {
-                if(matrix[i] == null || !matrix[i].isSimilar(ingredients.get(i))) return;
+                if(matrix[i] == null || !matrix[i].equals(ingredients.get(i))) return;
             } else {
                 if(matrix[i] != null) return;
             }
