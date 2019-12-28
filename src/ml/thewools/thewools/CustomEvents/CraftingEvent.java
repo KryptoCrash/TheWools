@@ -22,6 +22,31 @@ public class CraftingEvent implements Listener {
             put(3, new ItemStack(Material.BLAZE_ROD));
             put(5, new ItemStack(Material.BLAZE_ROD));
         }});
+        checkCraft(new BlazeChestplate().item, e.getInventory(), new HashMap<Integer, ItemStack>() {{
+            put(0, new ItemStack(Material.BLAZE_ROD));
+            put(2, new ItemStack(Material.BLAZE_ROD));
+            put(3, new ItemStack(Material.BLAZE_ROD));
+            put(4, new ItemStack(Material.BLAZE_ROD));
+            put(5, new ItemStack(Material.BLAZE_ROD));
+            put(6, new ItemStack(Material.BLAZE_ROD));
+            put(7, new ItemStack(Material.BLAZE_ROD));
+            put(8, new ItemStack(Material.BLAZE_ROD));
+        }});
+        checkCraft(new BlazeLeggings().item, e.getInventory(), new HashMap<Integer, ItemStack>() {{
+            put(0, new ItemStack(Material.BLAZE_ROD));
+            put(1, new ItemStack(Material.BLAZE_ROD));
+            put(2, new ItemStack(Material.BLAZE_ROD));
+            put(3, new ItemStack(Material.BLAZE_ROD));
+            put(5, new ItemStack(Material.BLAZE_ROD));
+            put(6, new ItemStack(Material.BLAZE_ROD));
+            put(8, new ItemStack(Material.BLAZE_ROD));
+        }});
+        checkCraft(new BlazeBoots().item, e.getInventory(), new HashMap<Integer, ItemStack>() {{
+            put(0, new ItemStack(Material.BLAZE_ROD));
+            put(2, new ItemStack(Material.BLAZE_ROD));
+            put(3, new ItemStack(Material.BLAZE_ROD));
+            put(5, new ItemStack(Material.BLAZE_ROD));
+        }});
     }
     public void checkCraft(ItemStack result, CraftingInventory inv, HashMap<Integer, ItemStack> ingredients) {
         ItemStack[] matrix = inv.getMatrix();
