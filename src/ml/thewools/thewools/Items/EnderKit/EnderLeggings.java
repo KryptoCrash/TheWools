@@ -12,8 +12,8 @@ public class EnderLeggings extends Armor implements Listener {
     public EnderLeggings() {
         this.item = new ItemStack(Material.LEATHER_LEGGINGS);
         ItemMeta meta = item.getItemMeta();
-        meta.setLore(this.generateLore(ChatColor.PURPLE + "Ender Leggings", 30, 0));
-        meta.setDisplayName(ChatColor.PURPLE + "Ender Leggings");
+        meta.setLore(this.generateLore(ChatColor.DARK_PURPLE + "Ender Leggings", 30, 0));
+        meta.setDisplayName(ChatColor.DARK_PURPLE + "Ender Leggings");
         item.setItemMeta(meta);
     }
 }

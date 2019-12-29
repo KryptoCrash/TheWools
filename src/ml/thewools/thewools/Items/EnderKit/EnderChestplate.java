@@ -12,8 +12,8 @@ public class EnderChestplate extends Armor implements Listener {
     public EnderChestplate() {
         this.item = new ItemStack(Material.LEATHER_CHESTPLATE);
         ItemMeta meta = item.getItemMeta();
-        meta.setLore(this.generateLore(ChatColor.PURPLE + "Ender Chestplate", 30, 0));
-        meta.setDisplayName(ChatColor.PURPLE + "Ender Chestplate");
+        meta.setLore(this.generateLore(ChatColor.DARK_PURPLE + "Ender Chestplate", 30, 0));
+        meta.setDisplayName(ChatColor.DARK_PURPLE + "Ender Chestplate");
         item.setItemMeta(meta);
     }
 }

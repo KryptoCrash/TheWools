@@ -12,7 +12,7 @@ public class WitherLeggings extends Armor implements Listener {
     public WitherLeggings() {
         this.item = new ItemStack(Material.LEATHER_LEGGINGS);
         ItemMeta meta = item.getItemMeta();
-        meta.setLore(this.generateLore(ChatColor.BLACK + "Wither Leggings", 30, 0));
+        meta.setLore(this.generateLore(item,ChatColor.BLACK + "Wither Leggings", 30, 0, 0));
         meta.setDisplayName(ChatColor.BLACK + "Wither Leggings");
         item.setItemMeta(meta);
     }

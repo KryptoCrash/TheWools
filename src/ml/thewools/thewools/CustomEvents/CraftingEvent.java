@@ -84,49 +84,49 @@ public class CraftingEvent implements Listener {
         }});
         //Wither Armor
         checkCraft(new WitherHelmet().item, inv, new HashMap<Integer, ItemStack>() {{
-            put(0, new ItemStack(Material.SKULL));
-            put(1, new ItemStack(Material.SKULL));
-            put(2, new ItemStack(Material.SKULL));
-            put(3, new ItemStack(Material.SKULL));
-            put(5, new ItemStack(Material.SKULL));
+            put(0, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(1, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(2, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
         }});
         checkCraft(new WitherChestplate().item, inv, new HashMap<Integer, ItemStack>() {{
-            put(0, new ItemStack(Material.SKULL));
-            put(2, new ItemStack(Material.SKULL));
-            put(3, new ItemStack(Material.SKULL));
-            put(4, new ItemStack(Material.SKULL));
-            put(5, new ItemStack(Material.SKULL));
-            put(6, new ItemStack(Material.SKULL));
-            put(7, new ItemStack(Material.SKULL));
-            put(8, new ItemStack(Material.SKULL));
+            put(0, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(2, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(4, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(6, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(7, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(8, new ItemStack(Material.WITHER_SKELETON_SKULL));
         }});
         checkCraft(new WitherLeggings().item, inv, new HashMap<Integer, ItemStack>() {{
-            put(0, new ItemStack(Material.SKULL));
-            put(1, new ItemStack(Material.SKULL));
-            put(2, new ItemStack(Material.SKULL));
-            put(3, new ItemStack(Material.SKULL));
-            put(5, new ItemStack(Material.SKULL));
-            put(6, new ItemStack(Material.SKULL));
-            put(8, new ItemStack(Material.SKULL));
+            put(0, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(1, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(2, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(6, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(8, new ItemStack(Material.WITHER_SKELETON_SKULL));
         }});
         checkCraft(new WitherBoots().item, inv, new HashMap<Integer, ItemStack>() {{
-            put(0, new ItemStack(Material.SKULL));
-            put(2, new ItemStack(Material.SKULL));
-            put(3, new ItemStack(Material.SKULL));
-            put(5, new ItemStack(Material.SKULL));
+            put(0, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(2, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
         }});
         checkCraft(new WitherHelmet().item, inv, new HashMap<Integer, ItemStack>() {{
-            put(3, new ItemStack(Material.SKULL));
-            put(4, new ItemStack(Material.SKULL));
-            put(5, new ItemStack(Material.SKULL));
-            put(6, new ItemStack(Material.SKULL));
-            put(8, new ItemStack(Material.SKULL));
+            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(4, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(6, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(8, new ItemStack(Material.WITHER_SKELETON_SKULL));
         }});
         checkCraft(new WitherBoots().item, inv, new HashMap<Integer, ItemStack>() {{
-            put(3, new ItemStack(Material.SKULL));
-            put(5, new ItemStack(Material.SKULL));
-            put(6, new ItemStack(Material.SKULL));
-            put(8, new ItemStack(Material.SKULL));
+            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(6, new ItemStack(Material.WITHER_SKELETON_SKULL));
+            put(8, new ItemStack(Material.WITHER_SKELETON_SKULL));
         }});
         //Magmar Armor
         checkCraft(new MagmarHelmet().item, inv, new HashMap<Integer, ItemStack>() {{
