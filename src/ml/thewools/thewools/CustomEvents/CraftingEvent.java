@@ -15,6 +15,11 @@ import ml.thewools.thewools.Items.MagmarKit.MagmarChestplate;
 import ml.thewools.thewools.Items.MagmarKit.MagmarLeggings;
 import ml.thewools.thewools.Items.MagmarKit.MagmarBoots;
 
+import ml.thewools.thewools.Items.EnderKit.EnderHelmet;
+import ml.thewools.thewools.Items.EnderKit.EnderChestplate;
+import ml.thewools.thewools.Items.EnderKit.EnderLeggings;
+import ml.thewools.thewools.Items.EnderKit.EnderBoots;
+
 import ml.thewools.thewools.Items.MiscCraftables.CraftableSaddle;
 
 import org.bukkit.Material;
@@ -124,14 +129,14 @@ public class CraftingEvent implements Listener {
             put(8, new ItemStack(Material.SKULL));
         }});
         //Magmar Armor
-        checkCraft(new WitherHelmet().item, inv, new HashMap<Integer, ItemStack>() {{
+        checkCraft(new MagmarHelmet().item, inv, new HashMap<Integer, ItemStack>() {{
             put(0, new ItemStack(Material.MAGMA_CREAM));
             put(1, new ItemStack(Material.MAGMA_CREAM));
             put(2, new ItemStack(Material.MAGMA_CREAM));
             put(3, new ItemStack(Material.MAGMA_CREAM));
             put(5, new ItemStack(Material.MAGMA_CREAM));
         }});
-        checkCraft(new WitherChestplate().item, inv, new HashMap<Integer, ItemStack>() {{
+        checkCraft(new MagmarChestplate().item, inv, new HashMap<Integer, ItemStack>() {{
             put(0, new ItemStack(Material.MAGMA_CREAM));
             put(2, new ItemStack(Material.MAGMA_CREAM));
             put(3, new ItemStack(Material.MAGMA_CREAM));
@@ -141,7 +146,7 @@ public class CraftingEvent implements Listener {
             put(7, new ItemStack(Material.MAGMA_CREAM));
             put(8, new ItemStack(Material.MAGMA_CREAM));
         }});
-        checkCraft(new WitherLeggings().item, inv, new HashMap<Integer, ItemStack>() {{
+        checkCraft(new MagmarLeggings().item, inv, new HashMap<Integer, ItemStack>() {{
             put(0, new ItemStack(Material.MAGMA_CREAM));
             put(1, new ItemStack(Material.MAGMA_CREAM));
             put(2, new ItemStack(Material.MAGMA_CREAM));
@@ -150,24 +155,70 @@ public class CraftingEvent implements Listener {
             put(6, new ItemStack(Material.MAGMA_CREAM));
             put(8, new ItemStack(Material.MAGMA_CREAM));
         }});
-        checkCraft(new WitherBoots().item, inv, new HashMap<Integer, ItemStack>() {{
+        checkCraft(new MagmarBoots().item, inv, new HashMap<Integer, ItemStack>() {{
             put(0, new ItemStack(Material.MAGMA_CREAM));
             put(2, new ItemStack(Material.MAGMA_CREAM));
             put(3, new ItemStack(Material.MAGMA_CREAM));
             put(5, new ItemStack(Material.MAGMA_CREAM));
         }});
-        checkCraft(new WitherHelmet().item, inv, new HashMap<Integer, ItemStack>() {{
+        checkCraft(new MagmarHelmet().item, inv, new HashMap<Integer, ItemStack>() {{
             put(3, new ItemStack(Material.MAGMA_CREAM));
             put(4, new ItemStack(Material.MAGMA_CREAM));
             put(5, new ItemStack(Material.MAGMA_CREAM));
             put(6, new ItemStack(Material.MAGMA_CREAM));
             put(8, new ItemStack(Material.MAGMA_CREAM));
         }});
-        checkCraft(new WitherBoots().item, inv, new HashMap<Integer, ItemStack>() {{
+        checkCraft(new MagmarBoots().item, inv, new HashMap<Integer, ItemStack>() {{
             put(3, new ItemStack(Material.MAGMA_CREAM));
             put(5, new ItemStack(Material.MAGMA_CREAM));
             put(6, new ItemStack(Material.MAGMA_CREAM));
             put(8, new ItemStack(Material.MAGMA_CREAM));
+        }});
+        //Ender Armor
+        checkCraft(new EnderHelmet().item, inv, new HashMap<Integer, ItemStack>() {{
+            put(0, new ItemStack(Material.ENDER_PEARL));
+            put(1, new ItemStack(Material.ENDER_PEARL));
+            put(2, new ItemStack(Material.ENDER_PEARL));
+            put(3, new ItemStack(Material.ENDER_PEARL));
+            put(5, new ItemStack(Material.ENDER_PEARL));
+        }});
+        checkCraft(new EnderChestplate().item, inv, new HashMap<Integer, ItemStack>() {{
+            put(0, new ItemStack(Material.ENDER_PEARL));
+            put(2, new ItemStack(Material.ENDER_PEARL));
+            put(3, new ItemStack(Material.ENDER_PEARL));
+            put(4, new ItemStack(Material.ENDER_CHEST));
+            put(5, new ItemStack(Material.ENDER_PEARL));
+            put(6, new ItemStack(Material.ENDER_PEARL));
+            put(7, new ItemStack(Material.ENDER_PEARL));
+            put(8, new ItemStack(Material.ENDER_PEARL));
+        }});
+        checkCraft(new EnderLeggings().item, inv, new HashMap<Integer, ItemStack>() {{
+            put(0, new ItemStack(Material.ENDER_PEARL));
+            put(1, new ItemStack(Material.ENDER_PEARL));
+            put(2, new ItemStack(Material.ENDER_PEARL));
+            put(3, new ItemStack(Material.ENDER_PEARL));
+            put(5, new ItemStack(Material.ENDER_PEARL));
+            put(6, new ItemStack(Material.ENDER_PEARL));
+            put(8, new ItemStack(Material.ENDER_PEARL));
+        }});
+        checkCraft(new EnderBoots().item, inv, new HashMap<Integer, ItemStack>() {{
+            put(0, new ItemStack(Material.ENDER_PEARL));
+            put(2, new ItemStack(Material.ENDER_PEARL));
+            put(3, new ItemStack(Material.ENDER_PEARL));
+            put(5, new ItemStack(Material.ENDER_PEARL));
+        }});
+        checkCraft(new EnderHelmet().item, inv, new HashMap<Integer, ItemStack>() {{
+            put(3, new ItemStack(Material.ENDER_PEARL));
+            put(4, new ItemStack(Material.ENDER_PEARL));
+            put(5, new ItemStack(Material.ENDER_PEARL));
+            put(6, new ItemStack(Material.ENDER_PEARL));
+            put(8, new ItemStack(Material.ENDER_PEARL));
+        }});
+        checkCraft(new EnderBoots().item, inv, new HashMap<Integer, ItemStack>() {{
+            put(3, new ItemStack(Material.ENDER_PEARL));
+            put(5, new ItemStack(Material.ENDER_PEARL));
+            put(6, new ItemStack(Material.ENDER_PEARL));
+            put(8, new ItemStack(Material.ENDER_PEARL));
         }});
         //Misc Items
         checkCraft(new CraftableSaddle().item, inv, new HashMap<Integer, ItemStack>() {{
