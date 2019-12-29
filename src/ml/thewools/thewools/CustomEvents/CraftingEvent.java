@@ -1,6 +1,9 @@
 package ml.thewools.thewools.CustomEvents;
 
 import ml.thewools.thewools.Items.BlazeKit.BlazeHelmet;
+import ml.thewools.thewools.Items.BlazeKit.BlazeChestplate;
+import ml.thewools.thewools.Items.BlazeKit.BlazeLeggings;
+import ml.thewools.thewools.Items.BlazeKit.BlazeBoots;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
