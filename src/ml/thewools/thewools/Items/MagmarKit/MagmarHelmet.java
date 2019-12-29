@@ -12,8 +12,8 @@ public class MagmarHelmet extends Armor implements Listener {
     public MagmarHelmet() {
         this.item = new ItemStack(Material.LEATHER_HELMET);
         ItemMeta meta = item.getItemMeta();
-        meta.setLore(this.generateLore(ChatColor.BLACK + "Magmar Helmet", 30, 0));
-        meta.setDisplayName(ChatColor.BLACK + "Magmar Helmet");
+        meta.setLore(this.generateLore(ChatColor.RED + "Magmar Helmet", 30, 0));
+        meta.setDisplayName(ChatColor.RED + "Magmar Helmet");
         item.setItemMeta(meta);
     }
 }
