@@ -8,4 +8,4 @@ PatheticMustan - Developer
 00100000spacebar - Junior Developer
 RedWool - Game Designer
 MenaCicada - Builder/Game Designer
-TriggerMaster - Game Designer
+TriggerMaster - Game Designer/Math Nerd
