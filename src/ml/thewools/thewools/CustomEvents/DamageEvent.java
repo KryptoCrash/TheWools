@@ -20,7 +20,7 @@ public class DamageEvent implements Listener {
             double defense = 0;
             //Calc total defense
             for(ItemStack armorPiece : armor) {
-                if(armorPiece != null || !armorPiece.hasItemMeta()) {
+                if(armorPiece != null && armorPiece.hasItemMeta()) {
                     if(armorPiece.getItemMeta().hasLore()) {
                         defense += Double.parseDouble(armorPiece.getItemMeta().getLore().get(2));
                     } else {
@@ -38,12 +38,14 @@ public class DamageEvent implements Listener {
     }
     public double getDamage(LivingEntity damager) {
         ItemStack weapon = damager.getEquipment().getItemInMainHand();
-        if(weapon.getItemMeta().hasLore()) {
-            return Double.parseDouble(weapon.getItemMeta().getLore().get(1));
-        } else {
-            //Implement vanilla swords here
-            return 0;
-        }
+        if(weapon.hasItemMeta()) {
+            if (weapon.getItemMeta().hasLore()) {
+                return Double.parseDouble(weapon.getItemMeta().getLore().get(1));
+            } else {
+                //Implement vanilla swords here
+                return 0;
+            }
+        } else return 0;
     }
     public double calculateFinalHealth(double health, double defense, double damage) {
         return health - (50 / (defense + 50)) * damage;
