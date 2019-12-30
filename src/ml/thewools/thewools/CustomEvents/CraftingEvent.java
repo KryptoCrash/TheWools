@@ -233,7 +233,7 @@ public class CraftingEvent implements Listener {
             put(7, new ItemStack(Material.LEATHER));
             put(8, new ItemStack(Material.LEATHER));
         }});
-        checkCraft(new CraftableSaddle().item, inv, new HashMap<Integer, ItemStack>() {{
+        checkCraft(new MAKEENCHANTEDGAPPLESCRAFTABLEAGAIN().item, inv, new HashMap<Integer, ItemStack>() {{
             put(0, new ItemStack(Material.GOLD_BLOCK));
             put(1, new ItemStack(Material.GOLD_BLOCK));
             put(2, new ItemStack(Material.GOLD_BLOCK));
