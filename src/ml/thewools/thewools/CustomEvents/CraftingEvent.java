@@ -21,6 +21,7 @@ import ml.thewools.thewools.Items.EnderKit.EnderLeggings;
 import ml.thewools.thewools.Items.EnderKit.EnderBoots;
 
 import ml.thewools.thewools.Items.MiscCraftables.CraftableSaddle;
+import ml.thewools.thewools.Items.MiscCraftables.MAKEENCHANTEDGAPPLESCRAFTABLEAGAIN;
 
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
@@ -231,6 +232,17 @@ public class CraftingEvent implements Listener {
             put(6, new ItemStack(Material.LEATHER));
             put(7, new ItemStack(Material.LEATHER));
             put(8, new ItemStack(Material.LEATHER));
+        }});
+        checkCraft(new CraftableSaddle().item, inv, new HashMap<Integer, ItemStack>() {{
+            put(0, new ItemStack(Material.GOLD_BLOCK));
+            put(1, new ItemStack(Material.GOLD_BLOCK));
+            put(2, new ItemStack(Material.GOLD_BLOCK));
+            put(3, new ItemStack(Material.GOLD_BLOCK));
+            put(4, new ItemStack(Material.APPLE));
+            put(5, new ItemStack(Material.GOLD_BLOCK));
+            put(6, new ItemStack(Material.GOLD_BLOCK));
+            put(7, new ItemStack(Material.GOLD_BLOCK));
+            put(8, new ItemStack(Material.GOLD_BLOCK));
         }});
     }
     public void checkCraft(ItemStack result, CraftingInventory inv, HashMap<Integer, ItemStack> ingredients) {
