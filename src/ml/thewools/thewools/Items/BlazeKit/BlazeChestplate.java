@@ -12,7 +12,7 @@ public class BlazeChestplate extends Armor implements Listener {
     public BlazeChestplate() {
         this.item = new ItemStack(Material.LEATHER_CHESTPLATE);
         ItemMeta meta = item.getItemMeta();
-        meta.setLore(this.generateLore(ChatColor.GREEN + "Blaze Chestplate", 30, 0));
+        meta.setLore(item, this.generateLore(ChatColor.GREEN + "Blaze Chestplate", 30, 0, 0));
         meta.setDisplayName(ChatColor.GREEN + "Blaze Chestplate");
         item.setItemMeta(meta);
     }
