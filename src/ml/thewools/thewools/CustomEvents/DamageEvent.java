@@ -46,6 +46,6 @@ public class DamageEvent implements Listener {
         }
     }
     public double calculateFinalHealth(double health, double defense, double damage) {
-        return health - (10 / (defense + 10)) * damage;
+        return health - (50 / (defense + 50)) * damage;
     }
 }
