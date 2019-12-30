@@ -20,7 +20,7 @@ public class DamageEvent implements Listener {
             double defense = 0;
             //Calc total defense
             for(ItemStack armorPiece : armor) {
-                if(armorPiece != null) {
+                if(armorPiece != null || !armorPiece.hasItemMeta()) {
                     if(armorPiece.getItemMeta().hasLore()) {
                         defense += Double.parseDouble(armorPiece.getItemMeta().getLore().get(2));
                     } else {
