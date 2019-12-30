@@ -20,8 +20,8 @@ public class DamageEvent implements Listener {
             double defense = 0;
             //Calc total defense
             for(ItemStack armorPiece : armor) {
-                if(armorPiece != null && armorPiece.hasItemMeta()) {
-                    if(armorPiece.getItemMeta().hasLore()) {
+                if(armorPiece != null) {
+                    if(armorPiece.hasItemMeta()) {
                         defense += Double.parseDouble(armorPiece.getItemMeta().getLore().get(2));
                     } else {
                         //Implement vanilla armor here
@@ -30,24 +30,25 @@ public class DamageEvent implements Listener {
             }
             //Calc damage and final health
             if(e instanceof EntityDamageByEntityEvent) {
-                e.setDamage(calculateFinalHealth(health, defense, getDamage((LivingEntity) ((EntityDamageByEntityEvent) e).getDamager())));
+                e.setDamage(calculateFinalHealth(health, defense, getDamage((EntityDamageByEntityEvent) e)));
             } else {
                 e.setDamage(calculateFinalHealth(health, defense, e.getDamage()));
             }
         }
     }
-    public double getDamage(LivingEntity damager) {
+    public double getDamage(EntityDamageByEntityEvent e) {
+        LivingEntity damager = (LivingEntity) e.getDamager();
         ItemStack weapon = damager.getEquipment().getItemInMainHand();
         if(weapon.hasItemMeta()) {
-            if (weapon.getItemMeta().hasLore()) {
-                return Double.parseDouble(weapon.getItemMeta().getLore().get(1));
-            } else {
-                //Implement vanilla swords here
-                return 0;
-            }
-        } else return 0;
+            return Double.parseDouble(weapon.getItemMeta().getLore().get(1));
+        } else {
+            //Implement vanilla to custom converter here
+            return e.getDamage();
+        }
     }
     public double calculateFinalHealth(double health, double defense, double damage) {
-        return health - (50 / (defense + 50)) * damage;
+        double finalHealth = health - (50 / (defense + 50)) * damage;
+        System.out.println(finalHealth);
+        return finalHealth;
     }
 }

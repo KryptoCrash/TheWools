@@ -17,7 +17,6 @@ public class Armor {
         lore.add(Double.toString(health));
         lore.add(Double.toString(defense));
         lore.add(Double.toString(speed));
-        NBTEdit.setNBT(armor, NBTEdit.createNBTComp("mainhand", "generic.maxHealth", health));
         return lore;
     }
 }
