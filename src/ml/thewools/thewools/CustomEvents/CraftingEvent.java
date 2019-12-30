@@ -38,13 +38,7 @@ public class CraftingEvent implements Listener {
         CraftingInventory inv = e.getInventory();
         if(inv.getMatrix().length < 9) return;
         //Blaze Kit
-        checkCraft(new BlazeHelmet().item, inv, new HashMap<Integer, ItemStack>() {{
-            put(0, new ItemStack(Material.BLAZE_ROD));
-            put(1, new ItemStack(Material.BLAZE_ROD));
-            put(2, new ItemStack(Material.BLAZE_ROD));
-            put(3, new ItemStack(Material.BLAZE_ROD));
-            put(5, new ItemStack(Material.BLAZE_ROD));
-        }});
+        
         checkCraft(new BlazeChestplate().item, inv, new HashMap<Integer, ItemStack>() {{
             put(0, new ItemStack(Material.BLAZE_ROD));
             put(2, new ItemStack(Material.BLAZE_ROD));
