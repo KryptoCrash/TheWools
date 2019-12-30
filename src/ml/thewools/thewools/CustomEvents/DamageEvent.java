@@ -1,5 +1,6 @@
 package ml.thewools.thewools.CustomEvents;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
@@ -49,6 +50,7 @@ public class DamageEvent implements Listener {
     public double calculateFinalHealth(double health, double defense, double damage) {
         double finalHealth = health - (50 / (defense + 50)) * damage;
         System.out.println(finalHealth);
+        Bukkit.broadcastMessage(finalHealth + " " + defense + " " + damage);
         return finalHealth;
     }
 }
