@@ -12,7 +12,7 @@ public class BlazeBoots extends Armor implements Listener {
     public BlazeBoots() {
         this.item = new ItemStack(Material.LEATHER_BOOTS);
         ItemMeta meta = item.getItemMeta();
-        meta.setLore(item, this.generateLore(ChatColor.GREEN + "Blaze Boots", 30, 0, 0));
+        meta.setLore(this.generateLore(item, ChatColor.GREEN + "Blaze Boots", 30, 0, 0));
         meta.setDisplayName(ChatColor.GREEN + "Blaze Boots");
         item.setItemMeta(meta);
     }

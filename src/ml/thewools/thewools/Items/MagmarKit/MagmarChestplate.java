@@ -12,7 +12,7 @@ public class MagmarChestplate extends Armor implements Listener {
     public MagmarChestplate() {
         this.item = new ItemStack(Material.LEATHER_CHESTPLATE);
         ItemMeta meta = item.getItemMeta();
-        meta.setLore(item, this.generateLore(ChatColor.RED + "Magmar Chestplate", 30, 0, 0));
+        meta.setLore(this.generateLore(item,ChatColor.RED + "Magmar Chestplate", 30, 0, 0));
         meta.setDisplayName(ChatColor.RED + "Magmar Chestplate");
         item.setItemMeta(meta);
     }

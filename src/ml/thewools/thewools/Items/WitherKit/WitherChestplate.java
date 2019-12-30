@@ -12,7 +12,7 @@ public class WitherChestplate extends Armor implements Listener {
     public WitherChestplate() {
         this.item = new ItemStack(Material.LEATHER_CHESTPLATE);
         ItemMeta meta = item.getItemMeta();
-        meta.setLore(item, this.generateLore(ChatColor.BLACK + "Wither Chestplate", 30, 0, 0));
+        meta.setLore(this.generateLore(item,ChatColor.BLACK + "Wither Chestplate", 30, 0, 0));
         meta.setDisplayName(ChatColor.BLACK + "Wither Chestplate");
         item.setItemMeta(meta);
     }

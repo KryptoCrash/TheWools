@@ -12,7 +12,7 @@ public class MagmarLeggings extends Armor implements Listener {
     public MagmarLeggings() {
         this.item = new ItemStack(Material.LEATHER_LEGGINGS);
         ItemMeta meta = item.getItemMeta();
-        meta.setLore(item, this.generateLore(ChatColor.RED + "Magmar Leggings", 30, 0, 0));
+        meta.setLore(this.generateLore(item,ChatColor.RED + "Magmar Leggings", 30, 0, 0));
         meta.setDisplayName(ChatColor.RED + "Magmar Leggings");
         item.setItemMeta(meta);
     }

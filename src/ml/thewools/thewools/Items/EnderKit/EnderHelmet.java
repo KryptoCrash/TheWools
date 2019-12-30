@@ -12,8 +12,8 @@ public class EnderHelmet extends Armor implements Listener {
     public EnderHelmet() {
         this.item = new ItemStack(Material.LEATHER_HELMET);
         ItemMeta meta = item.getItemMeta();
-        meta.setLore(item, this.generateLore(ChatColor.PURPLE + "Ender Helmet", 30, 0, 0));
-        meta.setDisplayName(ChatColor.PURPLE + "Ender Helmet");
+        meta.setLore(this.generateLore(item,ChatColor.DARK_PURPLE + "Ender Helmet", 30, 0, 0));
+        meta.setDisplayName(ChatColor.DARK_PURPLE + "Ender Helmet");
         item.setItemMeta(meta);
     }
 }
