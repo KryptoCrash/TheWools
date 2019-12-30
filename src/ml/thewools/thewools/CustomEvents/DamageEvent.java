@@ -31,9 +31,9 @@ public class DamageEvent implements Listener {
             }
             //Calc damage and final health
             if(e instanceof EntityDamageByEntityEvent) {
-                e.setDamage(calculateFinalHealth(health, defense, getDamage((EntityDamageByEntityEvent) e)));
+                damagee.setHealth(calculateFinalHealth(health, defense, getDamage((EntityDamageByEntityEvent) e)));
             } else {
-                e.setDamage(calculateFinalHealth(health, defense, e.getDamage()));
+                damagee.setHealth(calculateFinalHealth(health, defense, e.getDamage()));
             }
         }
     }
