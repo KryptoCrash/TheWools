@@ -14,3 +14,5 @@ RedWool - Game Designer
 MenaCicada - Builder/Game Designer
 
 TriggerMaster - Game Designer/Math Nerd
+
+Zyxok Unum - Senior Developer
