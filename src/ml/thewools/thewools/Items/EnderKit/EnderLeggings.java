@@ -7,13 +7,8 @@ import org.bukkit.inventory.ItemStack;
 import ml.thewools.thewools.Items.Armor;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class EnderLeggings extends Armor implements Listener {
-    public ItemStack item;
+public class EnderLeggings extends Armor {
     public EnderLeggings() {
-        this.item = new ItemStack(Material.LEATHER_LEGGINGS);
-        ItemMeta meta = item.getItemMeta();
-        meta.setLore(this.generateLore(item,ChatColor.DARK_PURPLE + "Ender Leggings", 30, 0, 0));
-        meta.setDisplayName(ChatColor.DARK_PURPLE + "Ender Leggings");
-        item.setItemMeta(meta);
+        super(new ItemStack(Material.LEATHER_LEGGINGS),ChatColor.DARK_PURPLE + "Ender Leggings", 30, 0, 0);
     }
 }

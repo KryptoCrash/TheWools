@@ -7,13 +7,8 @@ import org.bukkit.inventory.ItemStack;
 import ml.thewools.thewools.Items.Armor;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class MagmarHelmet extends Armor implements Listener {
-    public ItemStack item;
+public class MagmarHelmet extends Armor {
     public MagmarHelmet() {
-        this.item = new ItemStack(Material.LEATHER_HELMET);
-        ItemMeta meta = item.getItemMeta();
-        meta.setLore(this.generateLore(item,ChatColor.RED + "Magmar Helmet", 30, 0, 0));
-        meta.setDisplayName(ChatColor.RED + "Magmar Helmet");
-        item.setItemMeta(meta);
+        super(new ItemStack(Material.LEATHER_HELMET),ChatColor.RED + "Magmar Helmet", 30, 0, 0);
     }
 }

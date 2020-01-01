@@ -1,9 +1,11 @@
 package ml.thewools.thewools.Items;
 
-import org.bukkit.Color;
-
 import java.util.ArrayList;
 
+/**
+ * Don't use this, it is bad
+ */
+@Deprecated
 public class Weapon {
     double damage;
     double attackSpeed;

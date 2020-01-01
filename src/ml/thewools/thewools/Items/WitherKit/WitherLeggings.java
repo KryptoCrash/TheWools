@@ -7,13 +7,10 @@ import org.bukkit.inventory.ItemStack;
 import ml.thewools.thewools.Items.Armor;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class WitherLeggings extends Armor implements Listener {
-    public ItemStack item;
+public class WitherLeggings extends Armor {
     public WitherLeggings() {
-        this.item = new ItemStack(Material.LEATHER_LEGGINGS);
-        ItemMeta meta = item.getItemMeta();
-        meta.setLore(this.generateLore(item,ChatColor.BLACK + "Wither Leggings", 30, 0, 0));
-        meta.setDisplayName(ChatColor.BLACK + "Wither Leggings");
-        item.setItemMeta(meta);
+        super(new ItemStack(Material.LEATHER_LEGGINGS),
+            ChatColor.BLACK + "Wither Leggings",
+            30, 0, 0);
     }
 }

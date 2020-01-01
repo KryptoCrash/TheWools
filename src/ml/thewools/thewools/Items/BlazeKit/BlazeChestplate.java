@@ -7,13 +7,8 @@ import org.bukkit.inventory.ItemStack;
 import ml.thewools.thewools.Items.Armor;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class BlazeChestplate extends Armor implements Listener {
-    public ItemStack item;
+public class BlazeChestplate extends Armor {
     public BlazeChestplate() {
-        this.item = new ItemStack(Material.LEATHER_CHESTPLATE);
-        ItemMeta meta = item.getItemMeta();
-        meta.setLore(this.generateLore(item,ChatColor.GREEN + "Blaze Chestplate", 30, 0, 0));
-        meta.setDisplayName(ChatColor.GREEN + "Blaze Chestplate");
-        item.setItemMeta(meta);
+        super(new ItemStack(Material.LEATHER_CHESTPLATE),ChatColor.GREEN + "Blaze Chestplate", 30, 0, 0);
     }
 }
