@@ -15,9 +15,9 @@ public class DamageEvent implements Listener {
     @EventHandler
     public void onTakeDamage(EntityDamageEvent e) {
         if(e.getEntity() instanceof LivingEntity) {
-            LivingEntity damagee = (LivingEntity) e.getEntity();
-            ItemStack[] armor = damagee.getEquipment().getArmorContents();
-            double health = damagee.getHealth();
+            LivingEntity damageTaker = (LivingEntity) e.getEntity();
+            ItemStack[] armor = damageTaker.getEquipment().getArmorContents();
+            double health = damageTaker.getHealth();
             double defense = 0;
             //Calc total defense
             for(ItemStack armorPiece : armor) {
@@ -31,15 +31,15 @@ public class DamageEvent implements Listener {
             }
             //Calc damage and final health
             if(e instanceof EntityDamageByEntityEvent) {
-                damagee.setHealth(calculateFinalHealth(health, defense, getDamage((EntityDamageByEntityEvent) e)));
+                damageTaker.setHealth(calculateFinalHealth(health, defense, getDamage((EntityDamageByEntityEvent) e)));
             } else {
-                damagee.setHealth(calculateFinalHealth(health, defense, e.getDamage()));
+                damageTaker.setHealth(calculateFinalHealth(health, defense, e.getDamage()));
             }
         }
     }
     public double getDamage(EntityDamageByEntityEvent e) {
-        LivingEntity damager = (LivingEntity) e.getDamager();
-        ItemStack weapon = damager.getEquipment().getItemInMainHand();
+        LivingEntity damageGiver = (LivingEntity) e.getDamager();
+        ItemStack weapon = damageGiver.getEquipment().getItemInMainHand();
         if(weapon.hasItemMeta()) {
             return Double.parseDouble(weapon.getItemMeta().getLore().get(1));
         } else {
