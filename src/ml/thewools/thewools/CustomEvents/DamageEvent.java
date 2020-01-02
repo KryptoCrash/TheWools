@@ -11,9 +11,7 @@ import org.bukkit.inventory.ItemStack;
 public class DamageEvent implements Listener {
     @EventHandler
     public void onTakeDamage(EntityDamageEvent e) {
-
-
-        if(e.getEntity() instanceof LivingEntity) {
+        if (e.getEntity() instanceof LivingEntity) {
             LivingEntity damageTaker = (LivingEntity) e.getEntity();
             ItemStack[] armor = damageTaker.getEquipment().getArmorContents();
 
@@ -26,6 +24,14 @@ public class DamageEvent implements Listener {
 
             double damage;
 
+            /* TODO:
+             *   - Implement vanilla armor defense points.
+             *   - Fix getDamage so that it works for projectiles.
+             *   - Fix fall damage.
+             *   - Fix getDamage so that armor works with fall damage, and block damage.
+             */
+
+
             if (e instanceof EntityDamageByEntityEvent) {
                 damage = getDamage((EntityDamageByEntityEvent) e);
             } else {
@@ -37,19 +43,21 @@ public class DamageEvent implements Listener {
     }
 
     public double getDamage(EntityDamageByEntityEvent e) {
-        return e.getDamage();
-
-        // Weapons not used yet
-        /*
+        // BUG: getDamage assumes the damageGiver is a live mob, not a projectile.
         LivingEntity damageGiver = (LivingEntity) e.getDamager();
         ItemStack weapon = damageGiver.getEquipment().getItemInMainHand();
-
-        if (weapon.hasItemMeta()) {
+        if (weapon.hasItemMeta() && weapon.getItemMeta().hasLore()) {
             return Double.parseDouble(weapon.getItemMeta().getLore().get(1));
         } else {
             //Implement vanilla to custom converter here
             return e.getDamage();
         }
-        */
     }
+    /*
+    public double calculateFinalHealth(double health, double defense, double damage) {
+        double finalHealth = health - (50 / (defense + 50)) * damage;
+        System.out.println(finalHealth);
+        Bukkit.broadcastMessage(finalHealth + " " + defense + " " + damage);
+        return finalHealth;
+    }*/
 }
