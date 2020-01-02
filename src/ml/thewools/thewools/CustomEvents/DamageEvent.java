@@ -61,3 +61,13 @@ public class DamageEvent implements Listener {
         return finalHealth;
     }*/
 }
+
+/* Process:
+ * 1. Find what caused the damage, and get the amount of raw damage
+ * 2. Find the DamageTaker, and get all armor bonuses, as well as calculate set bonus.
+ * 3. Find how much reduction in damage the armor does, and how much damage would be applied.
+ * 4. Reduce the realHealth by the amount of damage, and store it in the entity.
+ * 5. Scale the entity's health so that it fits in 5 rows of hearts. (100 HP)
+ * 6. (Stretch Goal) Allow an additional 5 rows of hearts be represented by absorption hearts, and scale accordingly.
+ *              (This would allow 200 HP to be represented in a clear, concise manner.)
+ */
