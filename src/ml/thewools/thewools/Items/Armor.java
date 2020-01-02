@@ -42,8 +42,14 @@ public class Armor implements Listener {
         item.setItemMeta(meta);
     }
 
+    /**
+     * @return 0 if no lore
+     */
     public static double getDoubleDataLore(int i, ItemStack armor) {
-        return Double.parseDouble(armor.getItemMeta().getLore().get(i));
+        if (!armor.hasItemMeta()) return 0;
+        ItemMeta meta = armor.getItemMeta();
+        if (!meta.hasLore()) return 0;
+        return Double.parseDouble(meta.getLore().get(i));
     }
     public static double getHealth(ItemStack armor) {
         return getDoubleDataLore(1,armor);
