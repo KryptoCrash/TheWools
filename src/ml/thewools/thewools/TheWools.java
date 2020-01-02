@@ -9,6 +9,7 @@ public class TheWools extends JavaPlugin {
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new CraftingEvent(), this);
         getServer().getPluginManager().registerEvents(new DamageEvent(), this);
+        getServer().getPluginManager().registerEvents(new SpawnEvent(), this);
     }
 
     @Override
