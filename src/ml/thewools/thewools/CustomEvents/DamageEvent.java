@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.inventory.ItemStack;
 
 public class DamageEvent implements Listener {
@@ -30,7 +31,6 @@ public class DamageEvent implements Listener {
             /* TODO:
              *   - Implement vanilla armor defense points.
              *   - Fix getDamage so that it works for projectiles.
-             *   - Fix fall damage.
              *   - Fix getDamage so that armor works with fall damage, and block damage.
              */
 
@@ -46,11 +46,22 @@ public class DamageEvent implements Listener {
     }
 
     public double getDamage(EntityDamageByEntityEvent e) {
-        // BUG: getDamage assumes the damageGiver is a live mob, not a projectile.
+        // TODO Bug: getDamage assumes the damageGiver is a live mob, not a projectile.
+
         LivingEntity damageGiver = (LivingEntity) e.getDamager();
-        ItemStack weapon = damageGiver.getEquipment().getItemInMainHand();
+
+        EntityEquipment equip = damageGiver.getEquipment();
+
+        if (equip==null) {
+            return e.getDamage();
+        }
+
+        ItemStack weapon = equip.getItemInMainHand();
+
         double damage = Weapon.getDamage(weapon);
-        if(damage != 0) return damage;
+
+        if (damage != 0) return damage;
+
         return e.getDamage();
     }
 }
