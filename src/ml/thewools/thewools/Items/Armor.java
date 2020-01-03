@@ -43,10 +43,10 @@ public class Armor implements Listener {
     }
 
     /**
-     * @return 0 if no lore
+     * @return 0 if no lore or armor null
      */
     public static double getDoubleDataLore(int i, ItemStack armor) {
-        if (!armor.hasItemMeta()) return 0;
+        if (armor == null || !armor.hasItemMeta()) return 0;
         ItemMeta meta = armor.getItemMeta();
         if (!meta.hasLore()) return 0;
         return Double.parseDouble(meta.getLore().get(i));
