@@ -1,19 +1,11 @@
 package ml.thewools.thewools.Items;
 
-import ml.thewools.thewools.Utils.NBTEdit;
+
 import org.bukkit.Color;
-import org.bukkit.Material;
-import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.tags.CustomItemTagContainer;
-import org.bukkit.material.MaterialData;
-import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 import java.util.*;
 
@@ -30,7 +22,6 @@ public class Armor implements Listener {
         this.item = item;
         ArrayList<String> lore = new ArrayList<>();
 
-        //bad
         lore.add(name);
         lore.add(String.valueOf(health));
         lore.add(String.valueOf(defense));
@@ -39,6 +30,21 @@ public class Armor implements Listener {
         ItemMeta meta = item.getItemMeta();
         meta.setLore(lore);
         meta.setDisplayName(name);
+        item.setItemMeta(meta);
+    }
+    public Armor(ItemStack item, String name, Color color, double health, double defense, double speed) {
+        this.item = item;
+        ArrayList<String> lore = new ArrayList<>();
+
+        lore.add(name);
+        lore.add(String.valueOf(health));
+        lore.add(String.valueOf(defense));
+        lore.add(String.valueOf(speed));
+
+        LeatherArmorMeta meta = (LeatherArmorMeta)item.getItemMeta();
+        meta.setLore(lore);
+        meta.setDisplayName(name);
+        meta.setColor(color);
         item.setItemMeta(meta);
     }
 
