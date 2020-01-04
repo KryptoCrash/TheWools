@@ -70,10 +70,13 @@ public class Armor implements Listener {
         lore.add(String.valueOf(defense));
         lore.add(String.valueOf(speed));
 
-        LeatherArmorMeta meta = (LeatherArmorMeta)item.getItemMeta();
+        ItemMeta meta = item.getItemMeta();
         meta.setLore(lore);
         meta.setDisplayName(name);
-        meta.setColor(color);
+        if (item instanceof LeatherArmorMeta) {
+            ((LeatherArmorMeta)meta).setColor(color);
+        } // cannot set color when crafting :(
+
         item.setItemMeta(meta);
     }
 
