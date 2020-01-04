@@ -1,24 +1,7 @@
 package ml.thewools.thewools.CustomEvents;
 
-import ml.thewools.thewools.Items.BlazeKit.BlazeHelmet;
-import ml.thewools.thewools.Items.BlazeKit.BlazeChestplate;
-import ml.thewools.thewools.Items.BlazeKit.BlazeLeggings;
-import ml.thewools.thewools.Items.BlazeKit.BlazeBoots;
-
-import ml.thewools.thewools.Items.WitherKit.WitherHelmet;
-import ml.thewools.thewools.Items.WitherKit.WitherChestplate;
-import ml.thewools.thewools.Items.WitherKit.WitherLeggings;
-import ml.thewools.thewools.Items.WitherKit.WitherBoots;
-
-import ml.thewools.thewools.Items.MagmarKit.MagmarHelmet;
-import ml.thewools.thewools.Items.MagmarKit.MagmarChestplate;
-import ml.thewools.thewools.Items.MagmarKit.MagmarLeggings;
-import ml.thewools.thewools.Items.MagmarKit.MagmarBoots;
-
-import ml.thewools.thewools.Items.EnderKit.EnderHelmet;
-import ml.thewools.thewools.Items.EnderKit.EnderChestplate;
-import ml.thewools.thewools.Items.EnderKit.EnderLeggings;
-import ml.thewools.thewools.Items.EnderKit.EnderBoots;
+import ml.thewools.thewools.Items.Armor;
+import ml.thewools.thewools.Items.ArmorKitAll;
 
 import ml.thewools.thewools.Items.MiscCraftables.CraftableSaddle;
 
@@ -36,191 +19,13 @@ public class CraftingEvent implements Listener {
     public void onPlayerCraftItem(PrepareItemCraftEvent e) {
         CraftingInventory inv = e.getInventory();
         if(inv.getMatrix().length < 9) return;
-        //Blaze Kit
-        checkCraft(new BlazeHelmet().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.BLAZE_ROD));
-            put(1, new ItemStack(Material.BLAZE_ROD));
-            put(2, new ItemStack(Material.BLAZE_ROD));
-            put(3, new ItemStack(Material.BLAZE_ROD));
-            put(5, new ItemStack(Material.BLAZE_ROD));
-        }});
-        checkCraft(new BlazeChestplate().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.BLAZE_ROD));
-            put(2, new ItemStack(Material.BLAZE_ROD));
-            put(3, new ItemStack(Material.BLAZE_ROD));
-            put(4, new ItemStack(Material.BLAZE_ROD));
-            put(5, new ItemStack(Material.BLAZE_ROD));
-            put(6, new ItemStack(Material.BLAZE_ROD));
-            put(7, new ItemStack(Material.BLAZE_ROD));
-            put(8, new ItemStack(Material.BLAZE_ROD));
-        }});
-        checkCraft(new BlazeLeggings().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.BLAZE_ROD));
-            put(1, new ItemStack(Material.BLAZE_ROD));
-            put(2, new ItemStack(Material.BLAZE_ROD));
-            put(3, new ItemStack(Material.BLAZE_ROD));
-            put(5, new ItemStack(Material.BLAZE_ROD));
-            put(6, new ItemStack(Material.BLAZE_ROD));
-            put(8, new ItemStack(Material.BLAZE_ROD));
-        }});
-        checkCraft(new BlazeBoots().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.BLAZE_ROD));
-            put(2, new ItemStack(Material.BLAZE_ROD));
-            put(3, new ItemStack(Material.BLAZE_ROD));
-            put(5, new ItemStack(Material.BLAZE_ROD));
-        }});
-        checkCraft(new BlazeHelmet().getItem(), inv, new HashMap<>() {{
-            put(3, new ItemStack(Material.BLAZE_ROD));
-            put(4, new ItemStack(Material.BLAZE_ROD));
-            put(5, new ItemStack(Material.BLAZE_ROD));
-            put(6, new ItemStack(Material.BLAZE_ROD));
-            put(8, new ItemStack(Material.BLAZE_ROD));
-        }});
-        checkCraft(new BlazeBoots().getItem(), inv, new HashMap<>() {{
-            put(3, new ItemStack(Material.BLAZE_ROD));
-            put(5, new ItemStack(Material.BLAZE_ROD));
-            put(6, new ItemStack(Material.BLAZE_ROD));
-            put(8, new ItemStack(Material.BLAZE_ROD));
-        }});
-        //Wither Armor
-        checkCraft(new WitherHelmet().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(1, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(2, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
-        }});
-        checkCraft(new WitherChestplate().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(2, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(4, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(6, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(7, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(8, new ItemStack(Material.WITHER_SKELETON_SKULL));
-        }});
-        checkCraft(new WitherLeggings().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(1, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(2, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(6, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(8, new ItemStack(Material.WITHER_SKELETON_SKULL));
-        }});
-        checkCraft(new WitherBoots().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(2, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
-        }});
-        checkCraft(new WitherHelmet().getItem(), inv, new HashMap<>() {{
-            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(4, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(6, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(8, new ItemStack(Material.WITHER_SKELETON_SKULL));
-        }});
-        checkCraft(new WitherBoots().getItem(), inv, new HashMap<>() {{
-            put(3, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(5, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(6, new ItemStack(Material.WITHER_SKELETON_SKULL));
-            put(8, new ItemStack(Material.WITHER_SKELETON_SKULL));
-        }});
-        //Magmar Armor
-        checkCraft(new MagmarHelmet().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.MAGMA_CREAM));
-            put(1, new ItemStack(Material.MAGMA_CREAM));
-            put(2, new ItemStack(Material.MAGMA_CREAM));
-            put(3, new ItemStack(Material.MAGMA_CREAM));
-            put(5, new ItemStack(Material.MAGMA_CREAM));
-        }});
-        checkCraft(new MagmarChestplate().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.MAGMA_CREAM));
-            put(2, new ItemStack(Material.MAGMA_CREAM));
-            put(3, new ItemStack(Material.MAGMA_CREAM));
-            put(4, new ItemStack(Material.MAGMA_CREAM));
-            put(5, new ItemStack(Material.MAGMA_CREAM));
-            put(6, new ItemStack(Material.MAGMA_CREAM));
-            put(7, new ItemStack(Material.MAGMA_CREAM));
-            put(8, new ItemStack(Material.MAGMA_CREAM));
-        }});
-        checkCraft(new MagmarLeggings().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.MAGMA_CREAM));
-            put(1, new ItemStack(Material.MAGMA_CREAM));
-            put(2, new ItemStack(Material.MAGMA_CREAM));
-            put(3, new ItemStack(Material.MAGMA_CREAM));
-            put(5, new ItemStack(Material.MAGMA_CREAM));
-            put(6, new ItemStack(Material.MAGMA_CREAM));
-            put(8, new ItemStack(Material.MAGMA_CREAM));
-        }});
-        checkCraft(new MagmarBoots().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.MAGMA_CREAM));
-            put(2, new ItemStack(Material.MAGMA_CREAM));
-            put(3, new ItemStack(Material.MAGMA_CREAM));
-            put(5, new ItemStack(Material.MAGMA_CREAM));
-        }});
-        checkCraft(new MagmarHelmet().getItem(), inv, new HashMap<>() {{
-            put(3, new ItemStack(Material.MAGMA_CREAM));
-            put(4, new ItemStack(Material.MAGMA_CREAM));
-            put(5, new ItemStack(Material.MAGMA_CREAM));
-            put(6, new ItemStack(Material.MAGMA_CREAM));
-            put(8, new ItemStack(Material.MAGMA_CREAM));
-        }});
-        checkCraft(new MagmarBoots().getItem(), inv, new HashMap<>() {{
-            put(3, new ItemStack(Material.MAGMA_CREAM));
-            put(5, new ItemStack(Material.MAGMA_CREAM));
-            put(6, new ItemStack(Material.MAGMA_CREAM));
-            put(8, new ItemStack(Material.MAGMA_CREAM));
-        }});
-        //Ender Armor
-        checkCraft(new EnderHelmet().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.ENDER_PEARL));
-            put(1, new ItemStack(Material.ENDER_PEARL));
-            put(2, new ItemStack(Material.ENDER_PEARL));
-            put(3, new ItemStack(Material.ENDER_PEARL));
-            put(5, new ItemStack(Material.ENDER_PEARL));
-        }});
-        checkCraft(new EnderChestplate().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.ENDER_PEARL));
-            put(2, new ItemStack(Material.ENDER_PEARL));
-            put(3, new ItemStack(Material.ENDER_PEARL));
-            put(4, new ItemStack(Material.ENDER_CHEST));
-            put(5, new ItemStack(Material.ENDER_PEARL));
-            put(6, new ItemStack(Material.ENDER_PEARL));
-            put(7, new ItemStack(Material.ENDER_PEARL));
-            put(8, new ItemStack(Material.ENDER_PEARL));
-        }});
-        checkCraft(new EnderLeggings().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.ENDER_PEARL));
-            put(1, new ItemStack(Material.ENDER_PEARL));
-            put(2, new ItemStack(Material.ENDER_PEARL));
-            put(3, new ItemStack(Material.ENDER_PEARL));
-            put(5, new ItemStack(Material.ENDER_PEARL));
-            put(6, new ItemStack(Material.ENDER_PEARL));
-            put(8, new ItemStack(Material.ENDER_PEARL));
-        }});
-        checkCraft(new EnderBoots().getItem(), inv, new HashMap<>() {{
-            put(0, new ItemStack(Material.ENDER_PEARL));
-            put(2, new ItemStack(Material.ENDER_PEARL));
-            put(3, new ItemStack(Material.ENDER_PEARL));
-            put(5, new ItemStack(Material.ENDER_PEARL));
-        }});
-        checkCraft(new EnderHelmet().getItem(), inv, new HashMap<>() {{
-            put(3, new ItemStack(Material.ENDER_PEARL));
-            put(4, new ItemStack(Material.ENDER_PEARL));
-            put(5, new ItemStack(Material.ENDER_PEARL));
-            put(6, new ItemStack(Material.ENDER_PEARL));
-            put(8, new ItemStack(Material.ENDER_PEARL));
-        }});
-        checkCraft(new EnderBoots().getItem(), inv, new HashMap<>() {{
-            put(3, new ItemStack(Material.ENDER_PEARL));
-            put(5, new ItemStack(Material.ENDER_PEARL));
-            put(6, new ItemStack(Material.ENDER_PEARL));
-            put(8, new ItemStack(Material.ENDER_PEARL));
-        }});
-        //Misc Items
+        // Blaze Kit
+        register(ArmorKitAll.BLAZE,new ItemStack(Material.BLAZE_ROD), inv);
+        register(ArmorKitAll.WITHER,new ItemStack(Material.WITHER_SKELETON_SKULL), inv);
+        register(ArmorKitAll.MAGMAR,new ItemStack(Material.MAGMA_CREAM), inv);
+        register(ArmorKitAll.ENDER,new ItemStack(Material.ENDER_PEARL), inv);
+
+        // Misc Items
         checkCraft(new CraftableSaddle().getItem(), inv, new HashMap<>() {{
             put(0, new ItemStack(Material.LEATHER));
             put(1, new ItemStack(Material.LEATHER));
@@ -231,6 +36,42 @@ public class CraftingEvent implements Listener {
             put(6, new ItemStack(Material.LEATHER));
             put(7, new ItemStack(Material.LEATHER));
             put(8, new ItemStack(Material.LEATHER));
+        }});
+    }
+    
+    public void register(ArmorKitAll kitAll, ItemStack material, CraftingInventory inv) {
+
+        checkCraft(kitAll.getItem(Armor.Type.HELMET), inv, new HashMap<>() {{
+            put(0, material);
+            put(1, material);
+            put(2, material);
+            put(3, material);
+            put(5, material);
+        }});
+        checkCraft(kitAll.getItem(Armor.Type.CHESTPLATE), inv, new HashMap<>() {{
+            put(0, material);
+            put(2, material);
+            put(3, material);
+            put(4, material);
+            put(5, material);
+            put(6, material);
+            put(7, material);
+            put(8, material);
+        }});
+        checkCraft(kitAll.getItem(Armor.Type.LEGGINGS), inv, new HashMap<>() {{
+            put(0, material);
+            put(1, material);
+            put(2, material);
+            put(3, material);
+            put(5, material);
+            put(6, material);
+            put(8, material);
+        }});
+        checkCraft(kitAll.getItem(Armor.Type.BOOTS), inv, new HashMap<>() {{
+            put(0, material);
+            put(2, material);
+            put(3, material);
+            put(5, material);
         }});
     }
     public void checkCraft(ItemStack result, CraftingInventory inv, HashMap<Integer,ItemStack> ingredients) {

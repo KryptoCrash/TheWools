@@ -1,7 +1,9 @@
 package ml.thewools.thewools.Items;
 
 
+import org.bukkit.ChatColor;
 import org.bukkit.Color;
+import org.bukkit.Material;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -10,6 +12,44 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import java.util.*;
 
 public class Armor implements Listener {
+    public enum Type {
+        HELMET,CHESTPLATE,LEGGINGS,BOOTS;
+    }
+    public static interface Kit {
+        default ItemStack getItem(Type piece) {
+            switch (piece) {
+                case HELMET:
+                    return new ItemStack(Material.LEATHER_HELMET);
+                case CHESTPLATE:
+                    return new ItemStack(Material.LEATHER_CHESTPLATE);
+                case LEGGINGS:
+                    return new ItemStack(Material.LEATHER_LEGGINGS);
+                case BOOTS:
+                    return new ItemStack(Material.LEATHER_BOOTS);
+            }
+            throw new IllegalArgumentException("Illegal Type of Armor");
+        }
+        default String getSuffix(Type piece) {
+            switch (piece) {
+                case HELMET:
+                    return " Helmet";
+                case CHESTPLATE:
+                    return " Chestplate";
+                case LEGGINGS:
+                    return " Leggings";
+                case BOOTS:
+                    return " Boots";
+            }
+            throw new IllegalArgumentException("Illegal Type of Armor");
+        }
+        abstract Armor type(Type piece);
+
+        default Armor getArmor(Type piece, String prefixChatColor, double health, double defense, double speed, String name, Color color) {
+            return new Armor(new ItemStack(getItem(piece)),
+                prefixChatColor + name + getSuffix(piece), color,
+                health, defense, speed);
+        }
+    }
 
     protected ItemStack item;
 
@@ -19,18 +59,7 @@ public class Armor implements Listener {
     }
 
     public Armor(ItemStack item, String name, double health, double defense, double speed) {
-        this.item = item;
-        ArrayList<String> lore = new ArrayList<>();
-
-        lore.add(name);
-        lore.add(String.valueOf(health));
-        lore.add(String.valueOf(defense));
-        lore.add(String.valueOf(speed));
-
-        ItemMeta meta = item.getItemMeta();
-        meta.setLore(lore);
-        meta.setDisplayName(name);
-        item.setItemMeta(meta);
+        this(item,name,null,health,defense,speed);
     }
     public Armor(ItemStack item, String name, Color color, double health, double defense, double speed) {
         this.item = item;
