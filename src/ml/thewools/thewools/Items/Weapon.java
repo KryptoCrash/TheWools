@@ -21,6 +21,7 @@ public class Weapon implements Listener {
         lore.add(String.valueOf(damage));
         lore.add(String.valueOf(attackSpeed));
 
+        assert item.hasItemMeta();
         ItemMeta meta = item.getItemMeta();
         meta.setLore(lore);
         meta.setDisplayName(name);
