@@ -1,7 +1,6 @@
 package ml.thewools.thewools.Items;
 
 
-import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.event.Listener;
@@ -16,7 +15,7 @@ public class Armor implements Listener {
         HELMET,CHESTPLATE,LEGGINGS,BOOTS;
     }
     public static interface Kit {
-        default ItemStack getItem(Type piece) {
+        default ItemStack getBaseItem(Type piece) {
             switch (piece) {
                 case HELMET:
                     return new ItemStack(Material.LEATHER_HELMET);
@@ -45,7 +44,8 @@ public class Armor implements Listener {
         abstract Armor type(Type piece);
 
         default Armor getArmor(Type piece, String prefixChatColor, double health, double defense, double speed, String name, Color color) {
-            return new Armor(new ItemStack(getItem(piece)),
+            System.out.println("Working");
+            return new Armor(new ItemStack(getBaseItem(piece)),
                 prefixChatColor + name + getSuffix(piece), color,
                 health, defense, speed);
         }
@@ -73,11 +73,13 @@ public class Armor implements Listener {
         ItemMeta meta = item.getItemMeta();
         meta.setLore(lore);
         meta.setDisplayName(name);
+
         if (item instanceof LeatherArmorMeta) {
             ((LeatherArmorMeta)meta).setColor(color);
         } // cannot set color when crafting :(
 
         item.setItemMeta(meta);
+        System.out.println(lore);
     }
 
     /**

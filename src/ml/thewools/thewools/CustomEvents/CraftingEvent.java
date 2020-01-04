@@ -41,14 +41,14 @@ public class CraftingEvent implements Listener {
     
     public void register(ArmorKitAll kitAll, ItemStack material, CraftingInventory inv) {
 
-        checkCraft(kitAll.getItem(Armor.Type.HELMET), inv, new HashMap<>() {{
+        checkCraft(kitAll.type(Armor.Type.HELMET).getItem(), inv, new HashMap<>() {{
             put(0, material);
             put(1, material);
             put(2, material);
             put(3, material);
             put(5, material);
         }});
-        checkCraft(kitAll.getItem(Armor.Type.CHESTPLATE), inv, new HashMap<>() {{
+        checkCraft(kitAll.type(Armor.Type.CHESTPLATE).getItem(), inv, new HashMap<>() {{
             put(0, material);
             put(2, material);
             put(3, material);
@@ -58,7 +58,7 @@ public class CraftingEvent implements Listener {
             put(7, material);
             put(8, material);
         }});
-        checkCraft(kitAll.getItem(Armor.Type.LEGGINGS), inv, new HashMap<>() {{
+        checkCraft(kitAll.type(Armor.Type.LEGGINGS).getItem(), inv, new HashMap<>() {{
             put(0, material);
             put(1, material);
             put(2, material);
@@ -67,7 +67,7 @@ public class CraftingEvent implements Listener {
             put(6, material);
             put(8, material);
         }});
-        checkCraft(kitAll.getItem(Armor.Type.BOOTS), inv, new HashMap<>() {{
+        checkCraft(kitAll.type(Armor.Type.BOOTS).getItem(), inv, new HashMap<>() {{
             put(0, material);
             put(2, material);
             put(3, material);

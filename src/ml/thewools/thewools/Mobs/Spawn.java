@@ -16,7 +16,7 @@ public class Spawn implements Listener {
 
         ItemStack[] armor = new ItemStack[4];
         for (int i = 0; i < 4; i++) {
-            armor[i]=ArmorKitAll.WITHER.getItem(Armor.Type.values()[i]);
+            armor[i]=ArmorKitAll.WITHER.getBaseItem(Armor.Type.values()[i]);
         }
         witherskel.getEquipment().setArmorContents(armor);
     }
