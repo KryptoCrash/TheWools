@@ -2,6 +2,7 @@ package ml.thewools.thewools.CustomEvents;
 
 import ml.thewools.thewools.Items.Armor;
 import ml.thewools.thewools.Items.Weapon;
+import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -41,7 +42,7 @@ public class DamageEvent implements Listener {
                 damage = e.getDamage();
             }
 
-            e.setDamage((50 / (defense + 50)) * (20 * damage / maxHealth));
+            e.setDamage((50 / (defense + 50)) * (20 * damage / Math.max(maxHealth, 20)));
         }
     }
 
