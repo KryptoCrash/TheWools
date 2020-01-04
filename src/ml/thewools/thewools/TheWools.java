@@ -2,6 +2,7 @@ package ml.thewools.thewools;
 
 import ml.thewools.thewools.CustomEvents.CraftingEvent;
 import ml.thewools.thewools.CustomEvents.DamageEvent;
+import ml.thewools.thewools.Mobs.Spawn;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class TheWools extends JavaPlugin {
@@ -9,6 +10,7 @@ public class TheWools extends JavaPlugin {
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new CraftingEvent(), this);
         getServer().getPluginManager().registerEvents(new DamageEvent(), this);
+        getServer().getPluginManager().registerEvents(new Spawn(), this);
     }
 
     @Override
