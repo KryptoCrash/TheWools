@@ -44,8 +44,8 @@ public class DamageEvent implements Listener {
             }
 
             double finalDamage = (50.0 / (defense + 50.0)) * (20.0 * damage / Math.max(maxHealth, 20.0));
-            e.setDamage(finalDamage);
-            Bukkit.broadcastMessage(finalDamage + " " + e.getDamage() + " " + defense + " " + maxHealth + " " + damage);
+            damageTaker.setHealth(Math.max(0.0, damageTaker.getHealth() - finalDamage));
+            Bukkit.broadcastMessage(damageTaker.getHealth() + " " + finalDamage + " " + defense + " " + maxHealth + " " + damage);
         }
     }
 
