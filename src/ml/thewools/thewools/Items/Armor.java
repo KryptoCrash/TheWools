@@ -44,7 +44,6 @@ public class Armor implements Listener {
         abstract Armor type(Type piece);
 
         default Armor getArmor(Type piece, String prefixChatColor, double health, double defense, double speed, String name, Color color) {
-            System.out.println("Working");
             return new Armor(new ItemStack(getBaseItem(piece)),
                 prefixChatColor + name + getSuffix(piece), color,
                 health, defense, speed);
@@ -79,7 +78,6 @@ public class Armor implements Listener {
         } // cannot set color when crafting :(
 
         item.setItemMeta(meta);
-        System.out.println(lore);
     }
 
     /**
