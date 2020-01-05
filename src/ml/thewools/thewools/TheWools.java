@@ -2,6 +2,7 @@ package ml.thewools.thewools;
 
 import ml.thewools.thewools.CustomEvents.CraftingEvent;
 import ml.thewools.thewools.CustomEvents.DamageEvent;
+import ml.thewools.thewools.Mobs.CommandBOMB;
 import ml.thewools.thewools.Mobs.Spawn;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -11,6 +12,8 @@ public class TheWools extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CraftingEvent(), this);
         getServer().getPluginManager().registerEvents(new DamageEvent(), this);
         getServer().getPluginManager().registerEvents(new Spawn(), this);
+
+        this.getCommand("bomb").setExecutor(new CommandBOMB());
     }
 
     @Override
