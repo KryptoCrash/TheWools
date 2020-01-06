@@ -10,14 +10,9 @@ import org.bukkit.event.player.PlayerEggThrowEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class Spawn implements Listener {
-    @EventHandler
-    public void onSpawn(PlayerEggThrowEvent e) {
-        LivingEntity witherskel = (LivingEntity)e.getEgg().getWorld().spawnEntity(e.getEgg().getLocation(), EntityType.WITHER_SKELETON);
 
-        ItemStack[] armor = new ItemStack[4];
-        for (int i = 0; i < 4; i++) {
-            armor[i]=ArmorKitAll.WITHER.getBaseItem(Armor.Type.values()[i]);
-        }
-        witherskel.getEquipment().setArmorContents(armor);
+    @EventHandler
+    public void example(PlayerEggThrowEvent e) {
+        new MobBuilder().setArmor(ArmorKitAll.WITHER).setType(EntityType.WITHER_SKELETON).spawn(e.getEgg().getWorld(),e.getEgg().getLocation());
     }
 }
