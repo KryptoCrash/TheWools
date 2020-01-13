@@ -84,10 +84,25 @@ public class Armor implements Listener {
      * @return 0 if no lore or armor null
      */
     public static double getDoubleDataLore(int i, ItemStack armor) {
-        if (armor == null || !armor.hasItemMeta()) return 0;
+
+        if (armor == null || !armor.hasItemMeta() || !meta.hasLore()) {
+            return vanilla(armor);
+        }
+
         ItemMeta meta = armor.getItemMeta();
-        if (!meta.hasLore()) return 0;
         return Double.parseDouble(meta.getLore().get(i));
+    }
+    public static double vanillaDefense(ItemStack armor) {
+        Player p = new Player();
+
+        ItemStack helmet = p.getInventory().getHelmet();
+        ItemStack chestplate = p.getInventory().getChestplate();
+        ItemStack leggings = p.getInventory().getLeggings();
+        ItemStack boots = p.getInventory().getBoots();
+
+        if (helmet != null && helmet.getType() == Material.DIAMOND_HELMET) {
+            
+        }
     }
     public static double getHealth(ItemStack armor) {
         return getDoubleDataLore(1,armor);

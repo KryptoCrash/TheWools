@@ -29,12 +29,11 @@ public class Weapon implements Listener {
     }
 
     /**
-     * @return 0 if no lore or armor null
+     * @return 0 if no lore or weapon null
      */
     public static double getDoubleDataLore(int i, ItemStack weapon) {
-        if (weapon == null || !weapon.hasItemMeta()) return 0;
+        if (weapon == null || !weapon.hasItemMeta() || !meta.hasLore()) return 0;
         ItemMeta meta = weapon.getItemMeta();
-        if (!meta.hasLore()) return 0;
         return Double.parseDouble(meta.getLore().get(i));
     }
     public static double getDamage(ItemStack weapon) {
