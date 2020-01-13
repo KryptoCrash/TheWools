@@ -30,7 +30,6 @@ public class DamageEvent implements Listener {
             double damage;
 
             /* TODO:
-             *   - Implement vanilla armor defense points.
              *   - Fix getDamage so that it works for projectiles.
              *   - Fix fall damage.
              *   - Fix getDamage so that armor works with fall damage, and block damage.

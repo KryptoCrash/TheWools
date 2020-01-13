@@ -100,9 +100,64 @@ public class Armor implements Listener {
         ItemStack leggings = p.getInventory().getLeggings();
         ItemStack boots = p.getInventory().getBoots();
 
+        //TODO: return proper armor values, which will take a bit of math
+
+        //Diamond
         if (helmet != null && helmet.getType() == Material.DIAMOND_HELMET) {
-            
+            return 0;
         }
+        if (chestplate != null && helmet.getType() == Material.DIAMOND_CHESTPLATE) {
+            return 0;
+        }
+        if (leggings != null && helmet.getType() == Material.DIAMOND_LEGGINGS) {
+            return 0;
+        }
+        if (boots != null && helmet.getType() == Material.DIAMOND_BOOTS) {
+            return 0;
+        }
+        
+        //Iron
+        if (helmet != null && helmet.getType() == Material.IRON_HELMET) {
+            return 0;
+        }
+        if (chestplate != null && helmet.getType() == Material.IRON_CHESTPLATE) {
+            return 0;
+        }
+        if (leggings != null && helmet.getType() == Material.IRON_LEGGINGS) {
+            return 0;
+        }
+        if (boots != null && helmet.getType() == Material.IRON_BOOTS) {
+            return 0;
+        }
+
+        //Gold
+        if (helmet != null && helmet.getType() == Material.GOLD_HELMET) {
+            return 0;
+        }
+        if (chestplate != null && helmet.getType() == Material.GOLD_CHESTPLATE) {
+            return 0;
+        }
+        if (leggings != null && helmet.getType() == Material.GOLD_LEGGINGS) {
+            return 0;
+        }
+        if (boots != null && helmet.getType() == Material.GOLD_BOOTS) {
+            return 0;
+        }
+
+        //Leather
+        if (helmet != null && helmet.getType() == Material.LEATHER_HELMET) {
+            return 0;
+        }
+        if (chestplate != null && helmet.getType() == Material.LEATHER_CHESTPLATE) {
+            return 0;
+        }
+        if (leggings != null && helmet.getType() == Material.LEATHER_LEGGINGS) {
+            return 0;
+        }
+        if (boots != null && helmet.getType() == Material.LEATHER_BOOTS) {
+            return 0;
+        }
+        
     }
     public static double getHealth(ItemStack armor) {
         return getDoubleDataLore(1,armor);
